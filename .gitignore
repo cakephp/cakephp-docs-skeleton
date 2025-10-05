@@ -1,0 +1,33 @@
+# Project specific files #
+##########################
+.vitepress/dist
+.vitepress/cache
+.vitepress/.temp
+/node_modules/
+/config.js
+/docs/*
+!/docs/.gitkeep
+
+# IDE and editor specific files #
+#################################
+/nbproject
+.idea
+.project
+.vscode
+.zed
+
+# OS generated files #
+######################
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+Icon?
+ehthumbs.db
+Thumbs.db
+
+# AI Code generartors #
+#######################
+CLAUDE.md
+/.claude/
