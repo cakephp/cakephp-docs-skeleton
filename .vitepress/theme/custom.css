@@ -12,6 +12,12 @@
   font-style: normal;
 }
 
+/** Improve content container real-estate **/
+/** see: https://github.com/vuejs/vitepress/discussions/1646 **/
+.VPDoc.has-aside .content-container {
+  max-width: 100% !important;
+}
+
 /* Theme Variables */
 :root {
   --cake-color-link: #2d7ea4;
@@ -113,4 +119,10 @@
 .custom-block.info .custom-block-title:before {
   content: "V";
   color: #a7d096;
+}
+
+/** Improve content container real-estate **/
+/** see: https://github.com/vuejs/vitepress/discussions/1646 **/
+.VPDoc.has-aside .content-container {
+  max-width: 100% !important;
 }
