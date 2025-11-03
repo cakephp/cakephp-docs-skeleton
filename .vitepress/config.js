@@ -15,8 +15,7 @@ const defaultConfig = {
     ['meta', { name: 'apple-mobile-web-app-title', content: 'CakePHP' }],
     ['link', { rel: 'manifest', href: '/favicon/site.webmanifest' }],
     ['link', { rel: 'preconnect', href: 'https://fonts.bunny.net' }],
-    ['link', { href: 'https://fonts.bunny.net/css?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap', rel: 'stylesheet' }],
-    ['link', { href: 'https://fonts.bunny.net/css?family=IBM+Plex+Sans:ital,wght@0,100..700;1,100..700&display=swap', rel: 'stylesheet'}],
+    ['link', { href: 'https://fonts.bunny.net/css?family=raleway:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i', rel: 'stylesheet' }],
   ],
   themeConfig: {
     logo: '/logo.svg',
