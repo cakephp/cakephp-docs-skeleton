@@ -1,6 +1,6 @@
 import { defineConfig } from 'vitepress'
 import { versionReplacer } from './plugins/version-replacer.js'
-import { deepMerge, loadConfigOverrides } from './utils.js'
+import { deepMerge, loadConfigOverrides, applyBaseToHeadTags } from './utils.js'
 
 const defaultConfig = {
   srcDir: 'docs',
@@ -14,10 +14,9 @@ const defaultConfig = {
     ['link', { rel: 'apple-touch-icon', sizes: '180x180', href: '/favicon/apple-touch-icon.png' }],
     ['meta', { name: 'apple-mobile-web-app-title', content: 'CakePHP' }],
     ['link', { rel: 'manifest', href: '/favicon/site.webmanifest' }],
-    ['link', { rel: 'preconnect', href: 'https://fonts.googleapis.com' }],
-    ['link', { rel: 'preconnect', href: 'https://fonts.gstatic.com', crossorigin: '' }],
-    ['link', { href: 'https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap', rel: 'stylesheet' }],
-    ['link', { href: 'https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,100..700;1,100..700&display=swap', rel: 'stylesheet'}],
+    ['link', { rel: 'preconnect', href: 'https://fonts.bunny.net' }],
+    ['link', { href: 'https://fonts.bunny.net/css?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap', rel: 'stylesheet' }],
+    ['link', { href: 'https://fonts.bunny.net/css?family=IBM+Plex+Sans:ital,wght@0,100..700;1,100..700&display=swap', rel: 'stylesheet'}],
   ],
   themeConfig: {
     logo: '/logo.svg',
@@ -58,4 +57,11 @@ const defaultConfig = {
 }
 
 const overrides = await loadConfigOverrides(import.meta.url)
-export default defineConfig(deepMerge(defaultConfig, overrides))
+const mergedConfig = deepMerge(defaultConfig, overrides)
+
+// Apply base path to head tags if base is specified
+if (overrides.base) {
+  applyBaseToHeadTags(mergedConfig, overrides.base)
+}
+
+export default defineConfig(mergedConfig)
